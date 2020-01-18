@@ -15,7 +15,7 @@ class Results extends Component {
                 key={index} 
                 id={item.id}
                 name={item.name}
-                avatar={item.avatar_url}
+                avatar={item.owner.avatar_url}
                 url={item.html_url}
                 language={item.language}
                 /> 

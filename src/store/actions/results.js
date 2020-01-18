@@ -42,7 +42,7 @@ export const getFilteredResults = (results) => {
 export const getResults = (keyword) => {
     let key = keyword == undefined ? "react" : keyword;
 
-    const url = ROOT_URL + `q=${key}&page=1&per_page=10&sort=stars&order=desc`; 
+    const url = ROOT_URL + `q=${key}&page=1&per_page=15&sort=stars&order=desc`; 
     return function (dispatch) {
       dispatch(loadingResults(true));
       return axios({

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index.js';
 import FilterName from "./FilterItem.js"
 
-class Filters extends Component {
+class Header extends Component {
     constructor(props) {
         super(props)
         this.handlerFilters = this.handlerFilters.bind(this);
@@ -49,4 +49,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(Filters);
+  )(Header);
