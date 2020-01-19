@@ -17,8 +17,8 @@ class Header extends Component {
     render(){
         return(
             <div className="Filters__Wrapper row">
-                <div className="col-lg-2 logo">
-                    <h2>Github Filters</h2>
+                <div className="col-lg-2">
+                    <h2 className="logo">Github Filters</h2>
                 </div>
                 <div className="col-lg-10 Filter">
                     <FilterName handlerFilters={this.handlerFilters}/>

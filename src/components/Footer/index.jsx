@@ -11,12 +11,12 @@ const Text = styled.p`
     color: #333;
 `
 
-export function Footer() {   
-    return(
+const Footer = () => (
         <Container className="row Footer">
             <div className="col-lg-12">
-                <Text>Made by <a href="http://dorianmorones.com/">Dorian Morones</a></Text>
+                <Text className="Footer-title">Made by <a href="http://dorianmorones.com/">Dorian Morones</a></Text>
             </div>
         </Container>
-    );
-}
+)
+
+export default Footer;
