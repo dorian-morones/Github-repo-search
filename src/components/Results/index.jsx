@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index.js';
-import ResultItem from "./ResultItem.js"
+import ResultItem from "./ResultItem.jsx"
 import { storeRepo } from "../../Utilities/storeRepo.js"
 
 class Results extends Component {

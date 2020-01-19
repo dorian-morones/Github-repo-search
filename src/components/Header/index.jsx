@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index.js';
-import FilterName from "./FilterItem.js"
+import FilterName from "./FilterItem.jsx"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
