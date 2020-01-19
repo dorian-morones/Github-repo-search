@@ -1,6 +1,10 @@
 import React from 'react';
-import Results from "../components/Results/index.js"
+import BookedContainer from "../components/Booked/index.jsx"
 
-const Booked = () => <Results />;
+const Booked = () => (
+    <div className="row justify-content-md-center">
+        <BookedContainer />
+    </div>
+)
 
 export default Booked;

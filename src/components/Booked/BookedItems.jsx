@@ -30,7 +30,7 @@ const RepoText = styled.p`
     font-size: 0.875rem;
 `
 
-class ResultItem extends Component {
+class BookedItem extends Component {
 
     constructor(props) {
         super(props)
@@ -63,7 +63,7 @@ class ResultItem extends Component {
                          <RepoText className="CharacterCard__Description"><strong>id</strong>: {id}</RepoText>
                          <RepoText className="CharacterCard__Description"><strong>url</strong>: <a href={url}>{url} <i className="fas fa-external-link-alt"></i></a></RepoText>
                          <RepoText className="CharacterCard__Description"><strong>language</strong>: {language}</RepoText>
-                         <RepoText className="CharacterCard_Store" onClick={e => this.handlerBookedState(e, this.props)}>Book this repository <i className="far fa-save"></i></RepoText>
+                         <RepoText className="CharacterCard_Store" onClick={e => this.handlerBookedState(e, this.props)}>Booked <i className="fas fa-star"></i></RepoText>
                     </div>
                 </div>
             </RepoArticle>
@@ -71,4 +71,4 @@ class ResultItem extends Component {
     }
 };
 
-export default ResultItem
+export default BookedItem;

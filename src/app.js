@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import "../sass/main.scss"
 import { GlobalStyles } from './style/global';
 import Layout from "./components/Layout/index.jsx"
 import Home from "./pages/home.jsx"

@@ -43,7 +43,7 @@ class FilterName extends Component {
             <Fragment>
                 <ButtonSearch onClick={e => this.handlerSearch(e)}>Search</ButtonSearch>
                 <SearchContainer>
-                    <i className="fas fa-search"></i><FilterInput onChange={e => this.setState({name: e.target.value})} placeholder="Type a name" />
+                    <i className="fas fa-search"></i><FilterInput onChange={e => this.setState({name: e.target.value})} placeholder="Search all Repositories" />
                 </SearchContainer>
             </Fragment>
         )

@@ -1,10 +1,18 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index.js';
-import ResultItem from "./ResultItem.js"
 import { storeRepo } from "../../Utilities/storeRepo.js"
+import BookedItem from '../Booked/BookedItems.jsx'
+import styled from 'styled-components';
 
-class Results extends Component {
+const AlertText = styled.p`
+    color:#333;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 20px;
+    text-align: center;
+`
+class BookedContainer extends Component {
     constructor(props) {
         super(props)
         this.state = { }
@@ -17,20 +25,20 @@ class Results extends Component {
         this.props.storeRepo(newRepo)
     }
     render(){
-        let Repo = this.props.result && this.props.result !== undefined ? this.props.result.map( (item, index) => {
+        let Repo = this.props.booked && this.props.booked.length > 0 ? this.props.booked.map( (item, index) => {
             return(
-                <ResultItem 
+                <BookedItem 
                 key={index} 
                 id={item.id}
                 name={item.name}
-                avatar={item.owner.avatar_url}
-                url={item.html_url}
+                avatar={item.avatar}
+                url={item.url}
                 language={item.language}
-                handlerStoreRepo={this.handlerStoreRepo}
+                // handlerStoreRepo={this.handlerStoreRepo}
                 /> 
             )
-        }) : <p>Loading</p>
-
+        }) : <AlertText>You don't have any repository booked <i className="far fa-frown"></i><br/> Please book a repository to can display it here.</AlertText>
+        console.log("Repo", Repo)
         return(
             <div className="col-lg-10 align-self-center Results__Wrapper">
                 {this.props.loading === true ? <p>Loading</p> : Repo}
@@ -41,9 +49,7 @@ class Results extends Component {
 
 const mapStateToProps = state => {
     return {
-        result: state.results.data.items,
-        booked: state.results.storeRepo,
-        loading: state.results.loading,
+        booked: state.results.storedRepo,
     };
 };
 
@@ -58,4 +64,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(Results);
+  )(BookedContainer);

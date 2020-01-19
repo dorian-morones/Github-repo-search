@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   text-align: center;
   background: #fff;
-  border-top: solid 2px #411582;
+  border-top: solid 2px #7300c1;
   padding-top: 10px;
 `
 const Text = styled.p`
