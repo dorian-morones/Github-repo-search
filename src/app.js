@@ -1,18 +1,22 @@
-import React from "react";
-import Results from "./components/Results/index.js"
-import Header from "./components/Header/index.js"
+import React, { Fragment } from "react";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import "../sass/main.scss"
 import { GlobalStyles } from './style/global';
-import Footer from './components/Footer/index.jsx'
+import Layout from "./components/Layout/index.jsx"
+import Home from "./pages/home.jsx"
+import Booked from "./pages/Booked.jsx"
 
 const App = () => {
   return (
-      <div className="container-fluid">
+    <BrowserRouter>
+      <Layout>
         <GlobalStyles />
-        <Header />
-        <Results />
-        <Footer />
-      </div>
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/booked" component={Booked} />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   );
 };
 
