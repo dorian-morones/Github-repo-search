@@ -1,6 +1,5 @@
 export default {
-    cart: [],
-    products: [
+    repo: [
       {
         'key': '1',
         'id': '1',
