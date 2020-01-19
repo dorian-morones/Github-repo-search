@@ -31,21 +31,40 @@ const RepoText = styled.p`
 `
 
 class ResultItem extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = { 
+            booked: false
+        }
+
+        this.handlerBookedState = this.handlerBookedState.bind(this);
+    }
+
+    handlerBookedState(e, repo){
+        e.preventDefault();
+        this.setState({booked: true})
+        this.props.handlerStoreRepo(repo)
+    }
+
     render(){
         let {id, name, avatar, url, language} = this.props
 
+        let image = avatar === undefined || avatar === '' ? default_image : avatar;
+
+        let start = this.state.booked == false ? <i className="far fa-star"></i> : <i className="fas fa-star"></i>
         return (
             <RepoArticle className="CharacterCard__Wrapper">
                 <div data="card header" className="CharacterCard__Img_Wrapper">
                     <div className="card-image" >
-                      <RepoImage src={avatar} alt={avatar} />
+                      <RepoImage src={image} alt={image} />
                     </div>
                     <div className="CharacterCard__Title">
                         <RepoTitle className="CharacterCard__Name">{name}</RepoTitle>
                          <RepoText className="CharacterCard__Description"><strong>id</strong>: {id}</RepoText>
-                         <RepoText className="CharacterCard__Description"><strong>url</strong>: <a href={url}>{url}</a></RepoText>
+                         <RepoText className="CharacterCard__Description"><strong>url</strong>: <a href={url}>{url} <i className="fas fa-external-link-alt"></i></a></RepoText>
                          <RepoText className="CharacterCard__Description"><strong>language</strong>: {language}</RepoText>
-                         <RepoText className="CharacterCard_Store"><i class="far fa-star"></i></RepoText>
+                         <RepoText className="CharacterCard_Store" onClick={e => this.handlerBookedState(e, this.props)}>{start}</RepoText>
                     </div>
                 </div>
             </RepoArticle>

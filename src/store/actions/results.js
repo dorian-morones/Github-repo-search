@@ -30,6 +30,13 @@ export const filterResults = (results) => {
     };
   };
 
+export const storeRepo = (repo) => {
+  console.log("actions", repo)
+  return {
+    type: actionTypes.STORE_REPO,
+    payload: repo
+  };
+};
 
 export const getFilteredResults = (results) => {
   return function (dispatch) {
@@ -40,8 +47,7 @@ export const getFilteredResults = (results) => {
 }
 
 export const getResults = (keyword) => {
-    let key = keyword == undefined ? "react" : keyword;
-
+    let key = keyword === undefined || keyword === '' ? "react" : keyword;
     const url = ROOT_URL + `q=${key}&page=1&per_page=15&sort=stars&order=desc`; 
     return function (dispatch) {
       dispatch(loadingResults(true));

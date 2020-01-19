@@ -39,10 +39,6 @@ const mapDispatchToProps = dispatch => {
         getResults: (name) => {
          dispatch(actions.getResults(name));
         }
-        // ,
-        // getFilteredResults: (results) => {
-        //     dispatch(actions.getFilteredResults(results));
-        // }
     };
 };
 
