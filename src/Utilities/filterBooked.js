@@ -1,5 +1,4 @@
 import store from '../store/index.js';
-import _ from 'lodash';
 
 export const filterBooked = (keyword) => {
     let storedRepo = store.getState().results.storedRepo;

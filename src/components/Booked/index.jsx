@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index.js';
 import { filterBooked } from "../../Utilities/filterBooked.js"
+import { RemoveStoreRepo } from "../../Utilities/storeRepo.js"
 import BookedItem from '../Booked/BookedItems.jsx'
 import styled from 'styled-components';
 
@@ -34,12 +35,17 @@ class BookedContainer extends Component {
         }
 
         this.handlerFilterRepo = this.handlerFilterRepo.bind(this);
+        this.handlerRemoveRepo = this.handlerRemoveRepo.bind(this);
     }
 
     handlerFilterRepo(e, keyword){
         this.setState({filtered: true})
         let newResults = filterBooked(keyword);
         this.props.storeFilteredRepo(newResults);
+    }
+    handlerRemoveRepo(e, repo){
+        let removeRepo = RemoveStoreRepo(repo.name)
+        this.props.storeRepo(removeRepo)
     }
 
     render(){
@@ -55,7 +61,7 @@ class BookedContainer extends Component {
                 avatar={item.avatar}
                 url={item.url}
                 language={item.language}
-                // handlerStoreRepo={this.handlerStoreRepo}
+                handlerRemoveRepo={this.handlerRemoveRepo}
                 /> 
             )
         }) : <AlertText>You don't have any repository booked <i className="far fa-frown"></i><br/> Please book a repository to can display it here.</AlertText>

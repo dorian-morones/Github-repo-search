@@ -34,24 +34,20 @@ class BookedItem extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { 
-            booked: false
-        }
+        this.state = { }
 
-        this.handlerBookedState = this.handlerBookedState.bind(this);
     }
 
     handlerBookedState(e, repo){
         e.preventDefault();
-        this.setState({booked: true})
-        this.props.handlerStoreRepo(repo)
+        this.props.handlerRemoveRepo(e, repo)
     }
 
     render(){
         let {id, name, avatar, url, language} = this.props
 
         let image = avatar === undefined || avatar === '' ? default_image : avatar;
-
+        console.log(this.props)
         return (
             <RepoArticle className="CharacterCard__Wrapper">
                 <div data="card header" className="CharacterCard__Img_Wrapper">
