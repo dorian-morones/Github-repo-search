@@ -1,1 +1,1 @@
-export { getResults, getFilteredResults, loadingResults, receiveResults, filterResults, storeRepo } from './results';
+export { getResults, getFilteredResults, loadingResults, receiveResults, filterResults, storeRepo, storeFilteredRepo } from './results';

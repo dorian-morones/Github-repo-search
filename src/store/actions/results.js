@@ -31,12 +31,20 @@ export const filterResults = (results) => {
   };
 
 export const storeRepo = (repo) => {
-  console.log("actions", repo)
   return {
     type: actionTypes.STORE_REPO,
     payload: repo
   };
 };
+
+export const storeFilteredRepo = (repo) => {
+  console.log("actions filtered", repo)
+  return {
+    type: actionTypes.STORE_FILTERED_REPO,
+    payload: repo
+  };
+};
+
 
 export const getFilteredResults = (results) => {
   return function (dispatch) {

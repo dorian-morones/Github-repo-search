@@ -3,6 +3,7 @@ import * as actionTypes from "../actions/actionTypes";
 const Results = {
     data: [],
     storedRepo: [],
+    storeFilteredRepo: [],
     loading: false,
   };
 
@@ -19,6 +20,8 @@ export const resultsReducer = (state = Results, action) => {
         return { ...state, dataFiltered: action.payload };
       case actionTypes.STORE_REPO:
         return { ...state, storedRepo: action.payload };
+      case actionTypes.STORE_FILTERED_REPO:
+        return { ...state, storeFilteredRepo: action.payload };
       default:
         return {
           ...state
