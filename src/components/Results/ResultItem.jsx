@@ -16,7 +16,7 @@ const RepoImage = styled.img`
     height: 300px;
 `
 const RepoTitle = styled.h2`
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Roboto', sans-serif;
     color: #6e5494;
     margin: 0px;
     font-size: 1.625rem;

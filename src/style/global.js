@@ -1,8 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto&display=swap');
-  body{
+ @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+ 
+   body{
     font-family: 'Roboto', sans-serif;
   }
 
@@ -12,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   h2{
-      font-family: 'Bebas Neue', cursive;
+      font-family: 'Roboto', sans-serif;
   }
   select{
     margin-right: 20px;
